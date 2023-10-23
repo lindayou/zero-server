@@ -1,0 +1,126 @@
+syntax = "v1"
+
+info(
+	title: "type title here"
+	desc: "type desc here"
+	author: "type author here"
+	email: "type email here"
+	version: "type version here"
+)
+
+type (
+	MenuRequest {
+		Id int `json:"id"`
+	}
+	MenuResponse {
+		Resp string `json:"resp"`
+	}
+)
+//获取菜单列表
+type (
+	Menu {
+		Id        int     `json:"id"`
+		CreatedAt int64   `json:"createdAt,optional"`
+		UpdatedAt int64   `json:"updatedAt,optional"`
+		ParentId  string  `json:"parentId,optional"`
+		Path      string  `json:"path,optional"`
+		Name      string  `json:"name,optional"`
+		Hidden    int     `json:"hidden,optional"`
+		Sort      int     `json:"sort,optional"`
+		KeepAlive int     `json:"keepAlive,optional"`
+		Title     string  `json:"title,optional"`
+		Icon      string  `json:"icon,optional"`
+		CloseTab  int     `json:"closeTab,optional"`
+		Children  []*Menu `json:"children,optional"`
+	}
+	getMenuListReq {
+	}
+	getMenuListResp {
+		Total    int     `json:"total"`
+		MenuList []*Menu `json:"menuList"`
+	}
+
+	//新增根菜单
+
+	addMenuReq {
+		ParentId  string `json:"parentId"`
+		Path      string `json:"path"`
+		Name      string `json:"name"`
+		Hidden    int    `json:"hidden"`
+		Sort      int    `json:"sort"`
+		KeepAlive int    `json:"keepAlive"`
+		Title     string `json:"title"`
+		Icon      string `json:"icon"`
+		CloseTab  int    `json:"closeTab"`
+	}
+	addMenuResp {
+		Message string `json:"message"`
+	}
+
+	//删除菜单
+	deleteMenuReq {
+		Id int64 `json:"id"`
+	}
+	deleteMenuResp {
+		Message string `json:"message"`
+	}
+
+	//编辑菜单
+	editMenuReq {
+		Id        int64  `json:"id"`
+		Path      string `json:"path"`
+		Name      string `json:"name"`
+		Hidden    int    `json:"hidden"`
+		Sort      int    `json:"sort"`
+		KeepAlive int    `json:"keepAlive"`
+		Title     string `json:"title"`
+		Icon      string `json:"icon"`
+		CloseTab  int    `json:"closeTab"`
+	}
+	editMenuResp {
+		Message string `json:"message"`
+	}
+	//获取指定角色的Menu
+	getMenuAuthorityReq {
+		AuthorityId int64 `json:"authorityId"`
+	}
+	getMenuAuthorityResp {
+		MenuList []*Menu `json:"menuList"`
+	}
+
+	AddMenuAuthorityReq{
+		MenuList []*Menu `json:"menuList"`
+	    AuthorityId int64 `json:"authorityId"`
+	}
+	AddMenuAuthorityResp{
+	Message string `json:"message"`
+	}
+)
+
+@server(
+	group: menu
+)
+
+service zero {
+	@handler menuList
+	post /menu/list(MenuRequest) returns (MenuResponse)
+	//获取菜单列表
+	@handler getMenuList
+	get /menu/getMenuList (getMenuListReq)returns(getMenuListResp)
+	//增加菜单
+	@handler addBaseMenu
+	post /menu/addBaseMenu (addMenuReq)returns(addMenuResp)
+	//删除菜单
+	@handler deleteMenu
+	delete /menu/deleteMenu(deleteMenuReq)returns(deleteMenuResp)
+	//编辑菜单
+	@handler editMenu
+	post /menu/editMenu(editMenuReq)returns(editMenuResp)
+	//获取指定角色的Menu
+	@handler getMenuAuthority
+	post  /menu/getMenuAuthority(getMenuAuthorityReq)returns(getMenuAuthorityResp)
+
+    //增加角色和Menu的关联关系
+    @handler addMenuAuthority
+	post /menu/addMenuAuthority (AddMenuAuthorityReq) returns (AddMenuAuthorityResp)
+}

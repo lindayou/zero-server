@@ -1,0 +1,83 @@
+syntax = "v1"
+
+info(
+	title: "type title here"
+	desc: "type desc here"
+	author: "type author here"
+	email: "type email here"
+	version: "type version here"
+)
+
+type (
+	// 创建角色
+	CreateAuthorityReq {
+		AuthorityId   int64  `json:"authorityId"`
+		AuthorityName string `json:"authorityName"`
+		ParentId      int64  `json:"parentId"`
+	}
+	CreateAuthorityResp {
+		Message string `json:"message"`
+	}
+
+	// 角色列表
+	GetAuthorityListReq {
+		PageNum  int64 `json:"pageNum,optional"`
+		PageSize int64 `json:"pageSize,optional"`
+	}
+	GetAuthorityList {
+		CreateAt      int64               `json:"createAt"`
+		UpdateAt      int64               `json:"updateAt"`
+		AuthorityId   int64               `json:"authorityId"`
+		AuthorityName string              `json:"authorityName"`
+		ParentId      int64               `json:"parentId"`
+		Children      []*GetAuthorityList `json:"children"`
+	}
+	GetAuthorityListResp {
+		AuthorityList []*GetAuthorityList `json:"authorityList"`
+	}
+	//删除角色
+	deleteAuthorityReq {
+		AuthorityId int64 `json:"authorityId"`
+	}
+	deleteAuthorityResp {
+		Message string `json:"message"`
+	}
+	//更新角色
+	updateAuthorityReq {
+		AuthorityId   int64  `json:"authorityId"`
+		AuthorityName string `json:"authorityName"`
+		ParentId      int64  `json:"parentId"`
+	}
+	updateAuthorityResp {
+		Message string `json:"message"`
+	}
+	//设置角色菜单权限
+	setDataAuthorityReq {
+	}
+	setDataAuthorityResp {
+	}
+
+)
+
+@server(
+
+	group: authority
+)
+service zero {
+	//查看角色列表
+	@handler getAuthorityList
+	get /authority/getAuthorityList(GetAuthorityListReq)returns(GetAuthorityListResp)
+	//创建角色
+	@handler createAuthority
+	post /authority/createAuthority(CreateAuthorityReq)returns(CreateAuthorityResp)
+	//删除角色
+	@handler deleteAuthority
+	post /authority/deleteAuthority(deleteAuthorityReq)returns(deleteAuthorityResp)
+	//更新角色
+	@handler updateAuthority
+	post /authority/updateAuthority(updateAuthorityReq)returns(updateAuthorityResp)
+	//设置角色权限
+	@handler setDataAuthority
+	post /authority/setDataAuthority(setDataAuthorityReq)returns(setDataAuthorityResp)
+
+}
