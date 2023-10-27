@@ -28,7 +28,7 @@ func (l *EditLogic) Edit(req *types.EditUserRequest) (resp *types.EditUserRespon
 	// todo: add your logic here and delete this line
 	user := new(user_model.SysUser)
 	user.Username = req.Username
-	err = user.Email.Scan(req.Email)
+	user.Email = req.Email
 	user.Phone = req.Phone
 	user.Id = req.Id
 	err = l.svcCtx.UserModel.Update(l.ctx, user)

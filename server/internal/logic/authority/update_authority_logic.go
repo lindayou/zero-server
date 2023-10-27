@@ -32,7 +32,7 @@ func (l *UpdateAuthorityLogic) UpdateAuthority(req *types.UpdateAuthorityReq) (r
 		AuthorityName: req.AuthorityName,
 		ParentId:      req.ParentId,
 	}
-	err = l.svcCtx.Authority.Update(l.ctx, &authority)
+	err = l.svcCtx.Authority.UpdateAuth(l.ctx, &authority)
 	if err != nil {
 		return nil, err
 	}

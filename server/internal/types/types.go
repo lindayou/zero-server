@@ -67,10 +67,11 @@ type UserMessage struct {
 	Id          int64        `json:"id"`
 	Username    string       `json:"username"`
 	Phone       string       `json:"phone"`
+	Email       string       `json:"email"`
 	CreateTime  int64        `json:"createTime"`
 	UpdateTime  int64        `json:"updateTime"`
 	AuthorityId int64        `json:"authorityId"`
-	Enable      int64        `json:"enable"`
+	Enable      int          `json:"enable"`
 	Uuid        string       `json:"uuid"`
 	Authorities []*Authority `json:"authorities"`
 }

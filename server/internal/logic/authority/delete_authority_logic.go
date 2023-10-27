@@ -2,8 +2,6 @@ package authority
 
 import (
 	"context"
-	"zero-server/server/model/anthority_model"
-
 	"zero-server/server/internal/svc"
 	"zero-server/server/internal/types"
 
@@ -27,10 +25,8 @@ func NewDeleteAuthorityLogic(ctx context.Context, svcCtx *svc.ServiceContext) *D
 func (l *DeleteAuthorityLogic) DeleteAuthority(req *types.DeleteAuthorityReq) (resp *types.DeleteAuthorityResp, err error) {
 	// todo: add your logic here and delete this line
 	resp = new(types.DeleteAuthorityResp)
-	authority := anthority_model.SysAuthorities{
-		AuthorityId: req.AuthorityId,
-	}
-	err = l.svcCtx.Authority.Delete(l.ctx, authority.AuthorityId)
+
+	err = l.svcCtx.Authority.DeleteAuthority(l.ctx, req.AuthorityId)
 	if err != nil {
 		return nil, err
 	}

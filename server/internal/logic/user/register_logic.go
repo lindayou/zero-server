@@ -47,7 +47,7 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 	user.Password = utils.BcryptHash(req.Password)
 	user.Phone = req.Phone
 	user.Uuid = uuid.NewV4().String()
-	err = user.Email.Scan(req.Email)
+	user.Email = req.Email
 	users, err := l.svcCtx.UserModel.Find(l.ctx, user)
 
 	if len(users) > 0 {

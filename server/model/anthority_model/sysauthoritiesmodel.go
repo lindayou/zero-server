@@ -15,6 +15,8 @@ type (
 		sysAuthoritiesModel
 		GetAllAuthorities(ctx context.Context) ([]*SysAuthorities, error)
 		GetAuthorityUser(ctx context.Context, userId int64) ([]*SysAuthorities, error)
+		DeleteAuthority(ctx context.Context, id int64) error
+		UpdateAuth(ctx context.Context, data *SysAuthorities) error
 	}
 
 	customSysAuthoritiesModel struct {
@@ -48,4 +50,14 @@ func (m *defaultSysAuthoritiesModel) GetAuthorityUser(ctx context.Context, userI
 		return nil, err
 	}
 	return authorities, nil
+}
+func (m *defaultSysAuthoritiesModel) DeleteAuthority(ctx context.Context, id int64) error {
+	query := fmt.Sprintf("delete from %s where `authority_id` = ?", m.table)
+	_, err := m.conn.ExecCtx(ctx, query, id)
+	return err
+}
+func (m *defaultSysAuthoritiesModel) UpdateAuth(ctx context.Context, data *SysAuthorities) error {
+	query := fmt.Sprintf("update %s set authority_name =? ,parent_id =? where `authority_id` = ?", m.table)
+	_, err := m.conn.ExecCtx(ctx, query, data.AuthorityName, data.ParentId, data.AuthorityId)
+	return err
 }

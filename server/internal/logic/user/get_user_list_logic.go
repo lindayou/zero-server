@@ -54,9 +54,11 @@ func (l *GetUserListLogic) GetUserList(req *types.UserListReq) (resp *types.User
 			Phone:       user.Phone,
 			CreateTime:  user.CreateTime.Unix(),
 			UpdateTime:  user.UpdateAt.Unix(),
-			AuthorityId: user.AuthorityId.Int64,
+			AuthorityId: int64(user.AuthorityId),
 			Uuid:        user.Uuid,
 			Authorities: Authotities,
+			Email:       user.Email,
+			Enable:      int(user.Enable),
 		})
 	}
 	resp.UserList = userList

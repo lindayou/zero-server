@@ -18,8 +18,8 @@ import (
 var (
 	sysUserFieldNames          = builder.RawFieldNames(&SysUser{})
 	sysUserRows                = strings.Join(sysUserFieldNames, ",")
-	sysUserRowsExpectAutoSet   = strings.Join(stringx.Remove(sysUserFieldNames, "`id`", "`create_time`", "`update_at`", "`updated_at`", "`update_time`", "`create_at`", "`created_at`"), ",")
-	sysUserRowsWithPlaceHolder = strings.Join(stringx.Remove(sysUserFieldNames, "`id`", "`create_time`", "`update_at`", "`updated_at`", "`update_time`", "`create_at`", "`created_at`"), "=?,") + "=?"
+	sysUserRowsExpectAutoSet   = strings.Join(stringx.Remove(sysUserFieldNames, "`id`", "`create_at`", "`create_time`", "`created_at`", "`update_at`", "`update_time`", "`updated_at`"), ",")
+	sysUserRowsWithPlaceHolder = strings.Join(stringx.Remove(sysUserFieldNames, "`id`", "`create_at`", "`create_time`", "`created_at`", "`update_at`", "`update_time`", "`updated_at`"), "=?,") + "=?"
 )
 
 type (
@@ -36,22 +36,29 @@ type (
 	}
 
 	SysUser struct {
-		Id          int64          `db:"id"`           // 用户ID
-		Username    string         `db:"username"`     // 用户名
-		Password    string         `db:"password"`     // 用户密码
-		Phone       string         `db:"phone"`        // 手机号
-		CreateTime  time.Time      `db:"create_time"`  // 创建时间
-		UpdateAt    time.Time      `db:"update_at"`    // 更新时间
-		AuthorityId sql.NullInt64  `db:"authority_id"` // 权限id
-		Email       sql.NullString `db:"email"`        // 邮箱
-		Enable      int64          `db:"enable"`       // 禁用标识
-		Uuid        string         `db:"uuid"`         // 用户uuid
+		Id          int64        `db:"id"`           // 用户ID
+		Username    string       `db:"username"`     // 用户名
+		Password    string       `db:"password"`     // 用户密码
+		Phone       string       `db:"phone"`        // 手机号
+		CreateTime  time.Time    `db:"create_time"`  // 创建时间
+		UpdateAt    sql.NullTime `db:"update_at"`    // 更新时间
+		AuthorityId int64        `db:"authority_id"` // 权限id
+		Email       string       `db:"email"`        // 邮箱
+		Enable      int64        `db:"enable"`       // 禁用标识
+		Uuid        string       `db:"uuid"`         // 用户uuid
 	}
 )
 
 func newSysUserModel(conn sqlx.SqlConn) *defaultSysUserModel {
 	return &defaultSysUserModel{
 		conn:  conn,
+		table: "`sys_user`",
+	}
+}
+
+func (m *defaultSysUserModel) withSession(session sqlx.Session) *defaultSysUserModel {
+	return &defaultSysUserModel{
+		conn:  sqlx.NewSqlConnFromSession(session),
 		table: "`sys_user`",
 	}
 }

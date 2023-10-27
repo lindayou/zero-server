@@ -28,8 +28,8 @@ CREATE TABLE `sys_user`  (
 							 `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '手机号',
 							 `create_time`  timestamp           NULL     DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
 							 `update_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-							 `authority_id` int NULL DEFAULT NULL COMMENT '权限id',
-							 `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '邮箱',
+							 `authority_id` int NULL DEFAULT NOT NULL COMMENT '权限id',
+							 `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT NULL COMMENT '邮箱',
 							 `enable` int(1) UNSIGNED ZEROFILL NOT NULL DEFAULT 1 COMMENT '禁用标识',
 							 `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '用户uuid',
 							 PRIMARY KEY (`id`) USING BTREE
