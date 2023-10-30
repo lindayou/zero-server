@@ -37,7 +37,7 @@ type (
 	}
 	//删除角色
 	deleteAuthorityReq {
-		AuthorityId int64 `json:"authorityId"`
+		AuthorityId int64 `json:"authorityId "`
 	}
 	deleteAuthorityResp {
 		Message string `json:"message"`

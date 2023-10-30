@@ -25,6 +25,11 @@ func NewChangePassLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Change
 
 func (l *ChangePassLogic) ChangePass(req *types.ChangePasswordReq) (resp *types.ChangePasswordResp, err error) {
 	// todo: add your logic here and delete this line
-
-	return
+	resp = new(types.ChangePasswordResp)
+	err = l.svcCtx.UserModel.ChangePass(l.ctx, req.PriPassword, req.ChangePassword, req.UserId)
+	if err != nil {
+		return nil, err
+	}
+	resp.Message = "修改成功"
+	return resp, nil
 }

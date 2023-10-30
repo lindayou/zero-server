@@ -14,6 +14,7 @@ type (
 	SysUserAuthorityModel interface {
 		sysUserAuthorityModel
 		SetUserAuth(ctx context.Context, authIds []int64, userId int64) error
+		Inserts(datas []*SysUserAuthority) error
 	}
 
 	customSysUserAuthorityModel struct {
@@ -39,7 +40,7 @@ func (m *defaultSysUserAuthorityModel) SetUserAuth(ctx context.Context, authIds 
 		query = fmt.Sprintf("INSERT into sys_user_authority (sys_authority_authority_id,sys_user_id) VALUES(?,?)")
 		blk, err := sqlx.NewBulkInserter(m.conn, query)
 		if err != nil {
-			panic(err)
+			return err
 		}
 		defer blk.Flush()
 
@@ -53,6 +54,25 @@ func (m *defaultSysUserAuthorityModel) SetUserAuth(ctx context.Context, authIds 
 	})
 	if err != nil {
 		return err
+	}
+	return nil
+}
+
+//创建用户批量插入
+
+func (m *defaultSysUserAuthorityModel) Inserts(datas []*SysUserAuthority) error {
+
+	query := fmt.Sprintf("insert into %s (%s) values (?, ?)", m.table, sysUserAuthorityRowsExpectAutoSet)
+	blk, err := sqlx.NewBulkInserter(m.conn, query)
+	if err != nil {
+		return err
+	}
+	defer blk.Flush()
+	for _, data := range datas {
+		err := blk.Insert(data.SysUserId, data.SysAuthorityAuthorityId)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }

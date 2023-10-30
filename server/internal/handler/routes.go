@@ -50,6 +50,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/user/setUserAuthority",
 				Handler: user.SetUserAuthorityHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/user/deleteUser",
+				Handler: user.DeleteUserHandler(serverCtx),
+			},
 		},
 	)
 

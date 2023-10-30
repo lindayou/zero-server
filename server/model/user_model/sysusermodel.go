@@ -2,10 +2,12 @@ package user_model
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"github.com/zeromicro/go-zero/core/stores/sqlc"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 	"time"
+	"zero-server/server/utils"
 )
 
 var _ SysUserModel = (*customSysUserModel)(nil)
@@ -21,6 +23,12 @@ type (
 		FindByUsername(ctx context.Context, data *SysUser) (*SysUser, error)
 		//用户列表
 		UserList(ctx context.Context, page, pageSize int64) ([]*UserMessage, error, int)
+		//删除用户
+		DeleteUser(ctx context.Context, id int64) error
+		//更新用户
+		UpdateUser(ctx context.Context, data *SysUser) error
+		//修改用户密码
+		ChangePass(ctx context.Context, priPass string, newPass string, userId int64) error
 	}
 
 	customSysUserModel struct {
@@ -92,5 +100,80 @@ func (m *defaultSysUserModel) UserList(ctx context.Context, page, pageSize int64
 		return nil, err, 0
 	}
 	return resp, nil, count
+
+}
+
+func (m *defaultSysUserModel) DeleteUser(ctx context.Context, id int64) error {
+	err := m.conn.TransactCtx(ctx, func(ctx context.Context, session sqlx.Session) error {
+		query := fmt.Sprintf("delete from %s where id =?", m.table)
+		_, err := m.conn.ExecCtx(ctx, query, id)
+		if err != nil {
+			return err
+		}
+		query2 := fmt.Sprintf("delete from sys_user_authority where sys_user_id = ?")
+		_, err = m.conn.ExecCtx(ctx, query2, id)
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+	if err != nil {
+		return err
+	}
+	return nil
+
+}
+func (m *defaultSysUserModel) UpdateUser(ctx context.Context, data *SysUser) error {
+	err := m.conn.TransactCtx(ctx, func(ctx context.Context, session sqlx.Session) error {
+		query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, sysUserRowsWithPlaceHolder)
+		_, err := m.conn.ExecCtx(ctx, query, data.Username, data.Password, data.Phone, data.AuthorityId, data.Email, data.Enable, data.Uuid, data.Id)
+
+		query2 := fmt.Sprintf("delete from sys_user_authority where sys_user_id = ?")
+		_, err = m.conn.ExecCtx(ctx, query2, data.Id)
+		if err != nil {
+			return err
+		}
+		query = fmt.Sprintf("INSERT into sys_user_authority (sys_authority_authority_id,sys_user_id) VALUES(?,?)")
+		blk, err := sqlx.NewBulkInserter(m.conn, query)
+		if err != nil {
+			return err
+		}
+		defer blk.Flush()
+
+		for _, authId := range data.AuthorityIds {
+			err := blk.Insert(authId, data.Id)
+			if err != nil {
+				return err
+			}
+		}
+		return nil
+	})
+
+	return err
+}
+
+func (m *defaultSysUserModel) ChangePass(ctx context.Context, priPass string, newPass string, userId int64) error {
+
+	//验证原密码
+	query := fmt.Sprintf("select password from  %s where id = ?", m.table)
+	realPass := ""
+	err := m.conn.QueryRowCtx(ctx, &realPass, query, userId)
+	if err != nil {
+		return err
+	}
+	if !utils.BcryptCheck(priPass, realPass) {
+		err = errors.New("原密码错误")
+		return err
+	}
+
+	//修改新密码
+	insertPass := utils.BcryptHash(newPass)
+	query2 := fmt.Sprintf("update %s set password  = ? where id = ?", m.table)
+
+	_, err = m.conn.Exec(query2, insertPass, userId)
+	if err != nil {
+		return err
+	}
+	return nil
 
 }

@@ -12,22 +12,26 @@ type LoginResponse struct {
 }
 
 type EditUserRequest struct {
-	Id       int64  `json:"id"`
-	Username string `json:"username"`
-	Phone    string `json:"phone"`
-	Email    string `json:"email"`
+	Id           int64   `json:"id"`
+	Username     string  `json:"username"`
+	Phone        string  `json:"phone"`
+	Email        string  `json:"email"`
+	Enable       int64   `json:"enable"`
+	AuthorityIds []int64 `json:"authorityIds"`
 }
 
 type EditUserResponse struct {
 	Message string `json:"message"`
+	Code    int64  `json:"code"`
 }
 
 type RegisterReq struct {
-	Username string `json:"username"`
-	Phone    string `json:"phone"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Code     string `json:"code"`
+	Username     string  `json:"username"`
+	Phone        string  `json:"phone"`
+	Email        string  `json:"email"`
+	Password     string  `json:"password"`
+	Enabled      int64   `json:"enabled"`
+	AuthorityIds []int64 `json:"authorityIds"`
 }
 
 type RegisterResp struct {
@@ -43,6 +47,7 @@ type SendIdentityMesResp struct {
 }
 
 type ChangePasswordReq struct {
+	UserId         int64  `json:"userId"`
 	PriPassword    string `json:"priPassword"`
 	ChangePassword string `json:"changePassword"`
 }
@@ -90,6 +95,14 @@ type SetUserAuthorityReq struct {
 }
 
 type SetUserAuthorityResp struct {
+	Message string `json:"message"`
+}
+
+type DeleteUserReq struct {
+	Id int64 `json:"id"`
+}
+
+type DeleteUserResp struct {
 	Message string `json:"message"`
 }
 
@@ -211,7 +224,7 @@ type GetAuthorityListResp struct {
 }
 
 type DeleteAuthorityReq struct {
-	AuthorityId int64 `json:"authorityId"`
+	AuthorityId int64 `json:"authorityId "`
 }
 
 type DeleteAuthorityResp struct {

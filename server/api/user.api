@@ -25,13 +25,16 @@ type (
 
 type (
 	EditUserRequest {
-		Id       int64  `json:"id"`
-		Username string `json:"username"`
-		Phone    string `json:"phone"`
-		Email    string `json:"email"`
+		Id           int64   `json:"id"`
+		Username     string  `json:"username"`
+		Phone        string  `json:"phone"`
+		Email        string  `json:"email"`
+		Enable       int64   `json:"enable"`
+		AuthorityIds []int64 `json:"authorityIds"`
 	}
 	EditUserResponse {
 		Message string `json:"message"`
+		Code    int64  `json:"code"`
 	}
 )
 
@@ -44,7 +47,9 @@ type (
 		Phone    string `json:"phone"`
 		Email    string `json:"email"`
 		Password string `json:"password"`
-		Code     string `json:"code"`
+		Enabled  int64  `json:"enabled"`
+
+		AuthorityIds []int64 `json:"authorityIds"`
 	}
 	RegisterResp {
 		Message string `json:"message"`
@@ -60,6 +65,7 @@ type (
 //修改密码
 type (
 	ChangePasswordReq {
+		UserId         int64  `json:"userId"`
 		PriPassword    string `json:"priPassword"`
 		ChangePassword string `json:"changePassword"`
 	}
@@ -109,10 +115,18 @@ type (
 	setUserAuthorityResp {
 		Message string `json:"message"`
 	}
+	//删除用户
+	deleteUserReq {
+		Id int64 `json:"id"`
+	}
+	deleteUserResp {
+		Message string `json:"message"`
+	}
 )
 @server(
 	//	jwt: Auth
 	group: user
+	middleware: CommonResponseMiddleware
 )
 service zero {
 	@handler login
@@ -135,4 +149,8 @@ service zero {
 	//设置用户权限
 	@handler  setUserAuthority
 	post /user/setUserAuthority(setUserAuthorityReq)returns(setUserAuthorityResp)
+
+	//删除用户
+	@handler deleteUser
+	post /user/deleteUser(deleteUserReq)returns(deleteUserResp)
 }
