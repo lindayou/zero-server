@@ -73,8 +73,21 @@ func (m *defaultSysUserModel) Find(ctx context.Context, data *SysUser) ([]*SysUs
 // 根据用户名查询单个用户信息
 func (m *defaultSysUserModel) FindByUsername(ctx context.Context, data *SysUser) (*SysUser, error) {
 	var resp SysUser
+	var testRes SysUsers
 	query := fmt.Sprintf("select * from %s where username = ? ", m.table)
-	err := m.conn.QueryRow(&resp, query, data.Username)
+	err := m.conn.QueryRow(&testRes, query, data.Username)
+	resp = SysUser{
+		Id:          testRes.Id,
+		Username:    testRes.Username,
+		Password:    testRes.Password,
+		Phone:       testRes.Phone,
+		CreateTime:  testRes.CreateTime,
+		UpdateAt:    testRes.UpdateAt,
+		AuthorityId: testRes.AuthorityId,
+		Email:       testRes.Email,
+		Enable:      testRes.Enable,
+		Uuid:        testRes.Uuid,
+	}
 	switch err {
 	case nil:
 		return &resp, nil

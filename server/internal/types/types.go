@@ -7,8 +7,10 @@ type LoginRequset struct {
 }
 
 type LoginResponse struct {
-	Token string `json:"token"`
-	Id    int    `json:"id"`
+	Code    int64  `json:"code"`
+	Message string `json:"message"`
+	Token   string `json:"token"`
+	Id      int    `json:"id"`
 }
 
 type EditUserRequest struct {
@@ -30,7 +32,7 @@ type RegisterReq struct {
 	Phone        string  `json:"phone"`
 	Email        string  `json:"email"`
 	Password     string  `json:"password"`
-	Enabled      int64   `json:"enabled"`
+	Enabled      int64   `json:"enable"`
 	AuthorityIds []int64 `json:"authorityIds"`
 }
 
@@ -121,9 +123,9 @@ type Menu struct {
 	ParentId  string  `json:"parentId,optional"`
 	Path      string  `json:"path,optional"`
 	Name      string  `json:"name,optional"`
-	Hidden    int     `json:"hidden,optional"`
+	Hidden    bool    `json:"hidden,optional"`
 	Sort      int     `json:"sort,optional"`
-	KeepAlive int     `json:"keepAlive,optional"`
+	KeepAlive bool    `json:"keepAlive,optional"`
 	Title     string  `json:"title,optional"`
 	Icon      string  `json:"icon,optional"`
 	CloseTab  int     `json:"closeTab,optional"`
@@ -142,12 +144,12 @@ type AddMenuReq struct {
 	ParentId  string `json:"parentId"`
 	Path      string `json:"path"`
 	Name      string `json:"name"`
-	Hidden    int    `json:"hidden"`
+	Hidden    bool   `json:"hidden"`
 	Sort      int    `json:"sort"`
-	KeepAlive int    `json:"keepAlive"`
+	KeepAlive bool   `json:"keepAlive"`
 	Title     string `json:"title"`
-	Icon      string `json:"icon"`
-	CloseTab  int    `json:"closeTab"`
+	Icon      string `json:"icon ,optional"`
+	CloseTab  int    `json:"closeTab, optional"`
 }
 
 type AddMenuResp struct {
@@ -166,12 +168,12 @@ type EditMenuReq struct {
 	Id        int64  `json:"id"`
 	Path      string `json:"path"`
 	Name      string `json:"name"`
-	Hidden    int    `json:"hidden"`
+	Hidden    bool   `json:"hidden"`
 	Sort      int    `json:"sort"`
-	KeepAlive int    `json:"keepAlive"`
+	KeepAlive bool   `json:"keepAlive"`
 	Title     string `json:"title"`
-	Icon      string `json:"icon"`
-	CloseTab  int    `json:"closeTab"`
+	Icon      string `json:"icon, optional"`
+	CloseTab  int    `json:"closeTab ,optional"`
 }
 
 type EditMenuResp struct {
@@ -245,4 +247,13 @@ type SetDataAuthorityReq struct {
 }
 
 type SetDataAuthorityResp struct {
+}
+
+type TestReq struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+
+type TestResp struct {
+	Message string `json:"message"`
 }

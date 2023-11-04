@@ -6,6 +6,7 @@ import (
 
 	authority "zero-server/server/internal/handler/authority"
 	menu "zero-server/server/internal/handler/menu"
+	test "zero-server/server/internal/handler/test"
 	user "zero-server/server/internal/handler/user"
 	"zero-server/server/internal/svc"
 
@@ -76,7 +77,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Handler: menu.AddBaseMenuHandler(serverCtx),
 			},
 			{
-				Method:  http.MethodDelete,
+				Method:  http.MethodPost,
 				Path:    "/menu/deleteMenu",
 				Handler: menu.DeleteMenuHandler(serverCtx),
 			},
@@ -124,6 +125,16 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodPost,
 				Path:    "/authority/setDataAuthority",
 				Handler: authority.SetDataAuthorityHandler(serverCtx),
+			},
+		},
+	)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodPost,
+				Path:    "/test/testInter",
+				Handler: test.TestHandler(serverCtx),
 			},
 		},
 	)

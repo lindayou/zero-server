@@ -48,6 +48,18 @@ type (
 		Uuid         string       `db:"uuid"`         // 用户uuid
 		AuthorityIds []int64      `db:"-"`
 	}
+	SysUsers struct {
+		Id          int64        `db:"id"`           // 用户ID
+		Username    string       `db:"username"`     // 用户名
+		Password    string       `db:"password"`     // 用户密码
+		Phone       string       `db:"phone"`        // 手机号
+		CreateTime  time.Time    `db:"create_time"`  // 创建时间
+		UpdateAt    sql.NullTime `db:"update_at"`    // 更新时间
+		AuthorityId int64        `db:"authority_id"` // 权限id
+		Email       string       `db:"email"`        // 邮箱
+		Enable      int64        `db:"enable"`       // 禁用标识
+		Uuid        string       `db:"uuid"`         // 用户uuid
+	}
 )
 
 func newSysUserModel(conn sqlx.SqlConn) *defaultSysUserModel {

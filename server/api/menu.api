@@ -25,9 +25,9 @@ type (
 		ParentId  string  `json:"parentId,optional"`
 		Path      string  `json:"path,optional"`
 		Name      string  `json:"name,optional"`
-		Hidden    int     `json:"hidden,optional"`
+		Hidden    bool     `json:"hidden,optional"`
 		Sort      int     `json:"sort,optional"`
-		KeepAlive int     `json:"keepAlive,optional"`
+		KeepAlive bool     `json:"keepAlive,optional"`
 		Title     string  `json:"title,optional"`
 		Icon      string  `json:"icon,optional"`
 		CloseTab  int     `json:"closeTab,optional"`
@@ -46,12 +46,12 @@ type (
 		ParentId  string `json:"parentId"`
 		Path      string `json:"path"`
 		Name      string `json:"name"`
-		Hidden    int    `json:"hidden"`
+		Hidden    bool    `json:"hidden"`
 		Sort      int    `json:"sort"`
-		KeepAlive int    `json:"keepAlive"`
+		KeepAlive bool    `json:"keepAlive"`
 		Title     string `json:"title"`
-		Icon      string `json:"icon"`
-		CloseTab  int    `json:"closeTab"`
+		Icon      string `json:"icon ,optional"`
+		CloseTab  int    `json:"closeTab, optional"`
 	}
 	addMenuResp {
 		Message string `json:"message"`
@@ -70,12 +70,12 @@ type (
 		Id        int64  `json:"id"`
 		Path      string `json:"path"`
 		Name      string `json:"name"`
-		Hidden    int    `json:"hidden"`
+		Hidden    bool    `json:"hidden"`
 		Sort      int    `json:"sort"`
-		KeepAlive int    `json:"keepAlive"`
+		KeepAlive bool    `json:"keepAlive"`
 		Title     string `json:"title"`
-		Icon      string `json:"icon"`
-		CloseTab  int    `json:"closeTab"`
+		Icon      string `json:"icon, optional"`
+		CloseTab  int    `json:"closeTab ,optional"`
 	}
 	editMenuResp {
 		Message string `json:"message"`
@@ -112,7 +112,7 @@ service zero {
 	post /menu/addBaseMenu (addMenuReq)returns(addMenuResp)
 	//删除菜单
 	@handler deleteMenu
-	delete /menu/deleteMenu(deleteMenuReq)returns(deleteMenuResp)
+	post /menu/deleteMenu(deleteMenuReq)returns(deleteMenuResp)
 	//编辑菜单
 	@handler editMenu
 	post /menu/editMenu(editMenuReq)returns(editMenuResp)

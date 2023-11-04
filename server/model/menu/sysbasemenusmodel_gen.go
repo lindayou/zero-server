@@ -43,11 +43,11 @@ type (
 		ParentId    string    `db:"parent_id"`    // 父菜单ID
 		Path        string    `db:"path"`         // 路由path
 		Name        string    `db:"name"`         // 路由name
-		Hidden      int64     `db:"hidden"`       // 是否在列表隐藏
+		Hidden      bool      `db:"hidden"`       // 是否在列表隐藏
 		Component   string    `db:"component"`    // 对应前端文件路径
 		Sort        int64     `db:"sort"`         // 排序标记
 		ActiveName  string    `db:"active_name"`  // 附加属性
-		KeepAlive   int64     `db:"keep_alive"`   // 附加属性
+		KeepAlive   bool      `db:"keep_alive"`   // 附加属性
 		DefaultMenu int64     `db:"default_menu"` // 附加属性
 		Title       string    `db:"title"`        // 附加属性
 		Icon        string    `db:"icon"`         // 附加属性
