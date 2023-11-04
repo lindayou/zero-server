@@ -1,0 +1,19 @@
+type (
+testReq {
+   Id int `json:"id"`
+   Name string `json:"name"`
+}
+testResp{
+Message string `json:"message"`
+
+}
+
+)
+
+@server(
+	group: test
+)
+service zero {
+	@handler test
+	post /test/testInter(testReq) returns (testResp)
+}
