@@ -7,10 +7,10 @@ type LoginRequset struct {
 }
 
 type LoginResponse struct {
-	Code    int64  `json:"code"`
-	Message string `json:"message"`
-	Token   string `json:"token"`
-	Id      int    `json:"id"`
+	Message     string `json:"message"`
+	Token       string `json:"token"`
+	Id          int    `json:"id"`
+	AuthorityId int    `json:"authorityId"`
 }
 
 type EditUserRequest struct {
@@ -30,7 +30,7 @@ type EditUserResponse struct {
 type RegisterReq struct {
 	Username     string  `json:"username"`
 	Phone        string  `json:"phone"`
-	Email        string  `json:"email"`
+	Email        string  `json:"email,optional"`
 	Password     string  `json:"password"`
 	Enabled      int64   `json:"enable"`
 	AuthorityIds []int64 `json:"authorityIds"`

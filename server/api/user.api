@@ -18,10 +18,10 @@ type (
 	}
 
 	LoginResponse {
-		Code    int64  `json:"code"`
-		Message string `json:"message"`
-		Token   string `json:"token"`
-		Id      int    `json:"id"`
+		Message     string `json:"message"`
+		Token       string `json:"token"`
+		Id          int    `json:"id"`
+		AuthorityId int    `json:"authorityId"`
 	}
 )
 //用户修改
@@ -48,7 +48,7 @@ type (
 	RegisterReq {
 		Username string `json:"username"`
 		Phone    string `json:"phone"`
-		Email    string `json:"email"`
+		Email    string `json:"email,optional"`
 		Password string `json:"password"`
 		Enabled  int64  `json:"enable"`
 

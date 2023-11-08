@@ -44,6 +44,7 @@ func (l *LoginLogic) Login(req *types.LoginRequset) (resp *types.LoginResponse, 
 	}
 
 	resp.Id = int(user.Id)
+	resp.AuthorityId = int(user.AuthorityId)
 	resp.Token = token
 	return resp, nil
 }
