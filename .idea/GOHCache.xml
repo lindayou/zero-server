@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="AddBaseMenuLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/add_base_menu_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddMenuAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/add_menu_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddMenuAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddMenuAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddMenuReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="AddMenuResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Authority">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChangePassLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/change_pass_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChangePasswordReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ChangePasswordResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CommonResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/utils/common.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CommonResponseMiddleware">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/middleware/CommonResponseMiddleware.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Config">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/authority/create_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="CreateAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/authority/delete_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteMenuLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/delete_menu_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteMenuReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteMenuResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteUserLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/delete_user_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteUserReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="DeleteUserResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EditLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/edit_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EditMenuLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/edit_menu_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EditMenuReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EditMenuResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EditUserRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="EditUserResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAuthorityList">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAuthorityListLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/authority/get_authority_list_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAuthorityListReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetAuthorityListResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMenuAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/get_menu_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMenuAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMenuAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMenuListLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/get_menu_list_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMenuListReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetMenuListResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetUserListLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/get_user_list_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/login_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginRequset">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Menu">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MenuListLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/menu/menu_list_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MenuRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="MenuResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/register_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendIdentityMesLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/send_identity_mes_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendIdentityMesReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SendIdentityMesResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ServiceContext">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/svc/service_context.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SetDataAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/authority/set_data_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SetDataAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SetDataAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SetUserAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/user/set_user_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SetUserAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SetUserAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SysAuthorities">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/anthority_model/sysauthoritiesmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SysAuthorityMenus">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/anthority_menu/sysauthoritymenusmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SysBaseMenus">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/menu/sysbasemenusmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SysUser">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_model/sysusermodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SysUserAuthority">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_auth/sysuserauthoritymodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="SysUsers">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_model/sysusermodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="TestReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="TestResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateAuthorityLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/authority/update_authority_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateAuthorityReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UpdateAuthorityResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserClaim">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/utils/utils.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserListReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserListResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserMessage">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+              <option value="file://$PROJECT_DIR$/server/model/user_model/sysusermodel.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="customSysAuthoritiesModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/anthority_model/sysauthoritiesmodel.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="customSysAuthorityMenusModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/anthority_menu/sysauthoritymenusmodel.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="customSysBaseMenusModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/menu/sysbasemenusmodel.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="customSysUserAuthorityModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_auth/sysuserauthoritymodel.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="customSysUserModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_model/sysusermodel.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="defaultSysAuthoritiesModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/anthority_model/sysauthoritiesmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="defaultSysAuthorityMenusModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/anthority_menu/sysauthoritymenusmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="defaultSysBaseMenusModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/menu/sysbasemenusmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="defaultSysUserAuthorityModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_auth/sysuserauthoritymodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="defaultSysUserModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/user_model/sysusermodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/server/internal/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366886998" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/authority/create_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366886998" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/authority/delete_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366886999" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/authority/get_authority_list_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366886999" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/authority/set_data_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366886999" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/authority/update_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366886999" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/add_base_menu_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887000" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/add_menu_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887000" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/delete_menu_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887001" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/edit_menu_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887001" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/get_menu_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887002" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/get_menu_list_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887002" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/menu_list_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887002" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/routes.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887002" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/change_pass_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887003" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/delete_user_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887003" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/edit_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887003" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/get_user_list_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887004" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/login_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887005" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/register_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887005" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/send_identity_mes_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887005" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/user/set_user_authority_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887005" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/authority/create_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887006" />
+              <option name="schema">
+                <list>
+                  <option value="CreateAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/authority/delete_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887006" />
+              <option name="schema">
+                <list>
+                  <option value="DeleteAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/authority/get_authority_list_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887007" />
+              <option name="schema">
+                <list>
+                  <option value="GetAuthorityListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/authority/set_data_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887008" />
+              <option name="schema">
+                <list>
+                  <option value="SetDataAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/authority/update_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887008" />
+              <option name="schema">
+                <list>
+                  <option value="UpdateAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/add_base_menu_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887008" />
+              <option name="schema">
+                <list>
+                  <option value="AddBaseMenuLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/add_menu_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887008" />
+              <option name="schema">
+                <list>
+                  <option value="AddMenuAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/delete_menu_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887009" />
+              <option name="schema">
+                <list>
+                  <option value="DeleteMenuLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/edit_menu_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887009" />
+              <option name="schema">
+                <list>
+                  <option value="EditMenuLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/get_menu_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887009" />
+              <option name="schema">
+                <list>
+                  <option value="GetMenuAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/get_menu_list_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887010" />
+              <option name="schema">
+                <list>
+                  <option value="GetMenuListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/menu/menu_list_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887010" />
+              <option name="schema">
+                <list>
+                  <option value="MenuListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/change_pass_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887011" />
+              <option name="schema">
+                <list>
+                  <option value="ChangePassLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/delete_user_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887011" />
+              <option name="schema">
+                <list>
+                  <option value="DeleteUserLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/edit_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887011" />
+              <option name="schema">
+                <list>
+                  <option value="EditLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/get_user_list_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887011" />
+              <option name="schema">
+                <list>
+                  <option value="GetUserListLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/login_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887012" />
+              <option name="schema">
+                <list>
+                  <option value="LoginLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/register_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699446871712" />
+              <option name="schema">
+                <list>
+                  <option value="RegisterLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/send_identity_mes_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887012" />
+              <option name="schema">
+                <list>
+                  <option value="SendIdentityMesLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/user/set_user_authority_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887012" />
+              <option name="schema">
+                <list>
+                  <option value="SetUserAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/middleware/CommonResponseMiddleware.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887013" />
+              <option name="schema">
+                <list>
+                  <option value="CommonResponseMiddleware" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/svc/service_context.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887013" />
+              <option name="schema">
+                <list>
+                  <option value="ServiceContext" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/types/types.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887014" />
+              <option name="schema">
+                <list>
+                  <option value="LoginRequset" />
+                  <option value="LoginResponse" />
+                  <option value="EditUserRequest" />
+                  <option value="EditUserResponse" />
+                  <option value="RegisterReq" />
+                  <option value="RegisterResp" />
+                  <option value="SendIdentityMesReq" />
+                  <option value="SendIdentityMesResp" />
+                  <option value="ChangePasswordReq" />
+                  <option value="ChangePasswordResp" />
+                  <option value="UserListReq" />
+                  <option value="UserListResp" />
+                  <option value="UserMessage" />
+                  <option value="Authority" />
+                  <option value="SetUserAuthorityReq" />
+                  <option value="SetUserAuthorityResp" />
+                  <option value="DeleteUserReq" />
+                  <option value="DeleteUserResp" />
+                  <option value="MenuRequest" />
+                  <option value="MenuResponse" />
+                  <option value="Menu" />
+                  <option value="GetMenuListReq" />
+                  <option value="GetMenuListResp" />
+                  <option value="AddMenuReq" />
+                  <option value="AddMenuResp" />
+                  <option value="DeleteMenuReq" />
+                  <option value="DeleteMenuResp" />
+                  <option value="EditMenuReq" />
+                  <option value="EditMenuResp" />
+                  <option value="GetMenuAuthorityReq" />
+                  <option value="GetMenuAuthorityResp" />
+                  <option value="AddMenuAuthorityReq" />
+                  <option value="AddMenuAuthorityResp" />
+                  <option value="CreateAuthorityReq" />
+                  <option value="CreateAuthorityResp" />
+                  <option value="GetAuthorityListReq" />
+                  <option value="GetAuthorityList" />
+                  <option value="GetAuthorityListResp" />
+                  <option value="DeleteAuthorityReq" />
+                  <option value="DeleteAuthorityResp" />
+                  <option value="UpdateAuthorityReq" />
+                  <option value="UpdateAuthorityResp" />
+                  <option value="SetDataAuthorityReq" />
+                  <option value="SetDataAuthorityResp" />
+                  <option value="TestReq" />
+                  <option value="TestResp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/anthority_menu/sysauthoritymenusmodel.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887015" />
+              <option name="schema">
+                <list>
+                  <option value="customSysAuthorityMenusModel" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/anthority_menu/sysauthoritymenusmodel_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887015" />
+              <option name="schema">
+                <list>
+                  <option value="defaultSysAuthorityMenusModel" />
+                  <option value="SysAuthorityMenus" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/anthority_menu/vars.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887015" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/anthority_model/sysauthoritiesmodel.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887016" />
+              <option name="schema">
+                <list>
+                  <option value="customSysAuthoritiesModel" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/anthority_model/sysauthoritiesmodel_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887016" />
+              <option name="schema">
+                <list>
+                  <option value="defaultSysAuthoritiesModel" />
+                  <option value="SysAuthorities" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/anthority_model/vars.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887016" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/menu/sysbasemenusmodel.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887017" />
+              <option name="schema">
+                <list>
+                  <option value="customSysBaseMenusModel" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/menu/sysbasemenusmodel_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887017" />
+              <option name="schema">
+                <list>
+                  <option value="defaultSysBaseMenusModel" />
+                  <option value="SysBaseMenus" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/menu/vars.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887017" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/user_auth/sysuserauthoritymodel.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887019" />
+              <option name="schema">
+                <list>
+                  <option value="customSysUserAuthorityModel" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/user_auth/sysuserauthoritymodel_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887019" />
+              <option name="schema">
+                <list>
+                  <option value="defaultSysUserAuthorityModel" />
+                  <option value="SysUserAuthority" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/user_auth/vars.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887020" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/user_model/sysusermodel.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887020" />
+              <option name="schema">
+                <list>
+                  <option value="customSysUserModel" />
+                  <option value="UserMessage" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/user_model/sysusermodel_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887021" />
+              <option name="schema">
+                <list>
+                  <option value="defaultSysUserModel" />
+                  <option value="SysUser" />
+                  <option value="SysUsers" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/user_model/vars.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887021" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/response/response.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887021" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/utils/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887022" />
+              <option name="schema">
+                <list>
+                  <option value="CommonResponse" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/utils/utils.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887022" />
+              <option name="schema">
+                <list>
+                  <option value="UserClaim" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/zero.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699366887022" />
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="add_base_menu_logic" value="AddBaseMenuLogic" />
+        <entry key="add_menu_authority_logic" value="AddMenuAuthorityLogic" />
+        <entry key="add_menu_authority_req" value="AddMenuAuthorityReq" />
+        <entry key="add_menu_authority_resp" value="AddMenuAuthorityResp" />
+        <entry key="add_menu_req" value="AddMenuReq" />
+        <entry key="add_menu_resp" value="AddMenuResp" />
+        <entry key="authority" value="Authority" />
+        <entry key="change_pass_logic" value="ChangePassLogic" />
+        <entry key="change_password_req" value="ChangePasswordReq" />
+        <entry key="change_password_resp" value="ChangePasswordResp" />
+        <entry key="common_response" value="CommonResponse" />
+        <entry key="common_response_middleware" value="CommonResponseMiddleware" />
+        <entry key="config" value="Config" />
+        <entry key="create_authority_logic" value="CreateAuthorityLogic" />
+        <entry key="create_authority_req" value="CreateAuthorityReq" />
+        <entry key="create_authority_resp" value="CreateAuthorityResp" />
+        <entry key="custom_sys_authorities_model" value="customSysAuthoritiesModel" />
+        <entry key="custom_sys_authority_menus_model" value="customSysAuthorityMenusModel" />
+        <entry key="custom_sys_base_menus_model" value="customSysBaseMenusModel" />
+        <entry key="custom_sys_user_authority_model" value="customSysUserAuthorityModel" />
+        <entry key="custom_sys_user_model" value="customSysUserModel" />
+        <entry key="default_sys_authorities_model" value="defaultSysAuthoritiesModel" />
+        <entry key="default_sys_authority_menus_model" value="defaultSysAuthorityMenusModel" />
+        <entry key="default_sys_base_menus_model" value="defaultSysBaseMenusModel" />
+        <entry key="default_sys_user_authority_model" value="defaultSysUserAuthorityModel" />
+        <entry key="default_sys_user_model" value="defaultSysUserModel" />
+        <entry key="delete_authority_logic" value="DeleteAuthorityLogic" />
+        <entry key="delete_authority_req" value="DeleteAuthorityReq" />
+        <entry key="delete_authority_resp" value="DeleteAuthorityResp" />
+        <entry key="delete_menu_logic" value="DeleteMenuLogic" />
+        <entry key="delete_menu_req" value="DeleteMenuReq" />
+        <entry key="delete_menu_resp" value="DeleteMenuResp" />
+        <entry key="delete_user_logic" value="DeleteUserLogic" />
+        <entry key="delete_user_req" value="DeleteUserReq" />
+        <entry key="delete_user_resp" value="DeleteUserResp" />
+        <entry key="edit_logic" value="EditLogic" />
+        <entry key="edit_menu_logic" value="EditMenuLogic" />
+        <entry key="edit_menu_req" value="EditMenuReq" />
+        <entry key="edit_menu_resp" value="EditMenuResp" />
+        <entry key="edit_user_request" value="EditUserRequest" />
+        <entry key="edit_user_response" value="EditUserResponse" />
+        <entry key="get_authority_list" value="GetAuthorityList" />
+        <entry key="get_authority_list_logic" value="GetAuthorityListLogic" />
+        <entry key="get_authority_list_req" value="GetAuthorityListReq" />
+        <entry key="get_authority_list_resp" value="GetAuthorityListResp" />
+        <entry key="get_menu_authority_logic" value="GetMenuAuthorityLogic" />
+        <entry key="get_menu_authority_req" value="GetMenuAuthorityReq" />
+        <entry key="get_menu_authority_resp" value="GetMenuAuthorityResp" />
+        <entry key="get_menu_list_logic" value="GetMenuListLogic" />
+        <entry key="get_menu_list_req" value="GetMenuListReq" />
+        <entry key="get_menu_list_resp" value="GetMenuListResp" />
+        <entry key="get_user_list_logic" value="GetUserListLogic" />
+        <entry key="login_logic" value="LoginLogic" />
+        <entry key="login_requset" value="LoginRequset" />
+        <entry key="login_response" value="LoginResponse" />
+        <entry key="menu" value="Menu" />
+        <entry key="menu_list_logic" value="MenuListLogic" />
+        <entry key="menu_request" value="MenuRequest" />
+        <entry key="menu_response" value="MenuResponse" />
+        <entry key="register_logic" value="RegisterLogic" />
+        <entry key="register_req" value="RegisterReq" />
+        <entry key="register_resp" value="RegisterResp" />
+        <entry key="send_identity_mes_logic" value="SendIdentityMesLogic" />
+        <entry key="send_identity_mes_req" value="SendIdentityMesReq" />
+        <entry key="send_identity_mes_resp" value="SendIdentityMesResp" />
+        <entry key="service_context" value="ServiceContext" />
+        <entry key="set_data_authority_logic" value="SetDataAuthorityLogic" />
+        <entry key="set_data_authority_req" value="SetDataAuthorityReq" />
+        <entry key="set_data_authority_resp" value="SetDataAuthorityResp" />
+        <entry key="set_user_authority_logic" value="SetUserAuthorityLogic" />
+        <entry key="set_user_authority_req" value="SetUserAuthorityReq" />
+        <entry key="set_user_authority_resp" value="SetUserAuthorityResp" />
+        <entry key="sys_authorities" value="SysAuthorities" />
+        <entry key="sys_authority_menus" value="SysAuthorityMenus" />
+        <entry key="sys_base_menus" value="SysBaseMenus" />
+        <entry key="sys_user" value="SysUser" />
+        <entry key="sys_user_authority" value="SysUserAuthority" />
+        <entry key="sys_users" value="SysUsers" />
+        <entry key="test_req" value="TestReq" />
+        <entry key="test_resp" value="TestResp" />
+        <entry key="update_authority_logic" value="UpdateAuthorityLogic" />
+        <entry key="update_authority_req" value="UpdateAuthorityReq" />
+        <entry key="update_authority_resp" value="UpdateAuthorityResp" />
+        <entry key="user_claim" value="UserClaim" />
+        <entry key="user_list_req" value="UserListReq" />
+        <entry key="user_list_resp" value="UserListResp" />
+        <entry key="user_message" value="UserMessage" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1699366900179" />
+  </component>
+</project>

@@ -50,6 +50,7 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 	user.Uuid = uuid.NewV4().String()
 	user.Email = req.Email
 	user.Enable = req.Enabled
+	user.AuthorityId = req.AuthorityId
 	user.AuthorityIds = req.AuthorityIds
 	users, err := l.svcCtx.UserModel.Find(l.ctx, user)
 

@@ -33,6 +33,7 @@ type RegisterReq struct {
 	Email        string  `json:"email,optional"`
 	Password     string  `json:"password"`
 	Enabled      int64   `json:"enable"`
+	AuthorityId  int64   `json:"authorityId"`
 	AuthorityIds []int64 `json:"authorityIds"`
 }
 
