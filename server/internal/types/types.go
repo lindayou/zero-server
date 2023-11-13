@@ -258,3 +258,21 @@ type TestReq struct {
 type TestResp struct {
 	Message string `json:"message"`
 }
+
+type GetDicListReq struct {
+}
+
+type GetDicListResp struct {
+	DicList []*Dictionary `json:"dicList"`
+}
+
+type Dictionary struct {
+	Id        int    `json:"id"`
+	CreatedAt int    `json:"createdAt"`
+	UpdatedAt int    `json:"updatedAt"`
+	DeletedAt int    `json:"deletedAt"`
+	Name      string `json:"name"`
+	Type      string `json:"type"`
+	Status    int64  `json:"status"`
+	Desc      string `json:"desc"`
+}

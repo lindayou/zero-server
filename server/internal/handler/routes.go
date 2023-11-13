@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	authority "zero-server/server/internal/handler/authority"
+	dictionary "zero-server/server/internal/handler/dictionary"
 	menu "zero-server/server/internal/handler/menu"
 	test "zero-server/server/internal/handler/test"
 	user "zero-server/server/internal/handler/user"
@@ -135,6 +136,16 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodPost,
 				Path:    "/test/testInter",
 				Handler: test.TestHandler(serverCtx),
+			},
+		},
+	)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodGet,
+				Path:    "/dic/getDicList",
+				Handler: dictionary.GetDicListHandler(serverCtx),
 			},
 		},
 	)

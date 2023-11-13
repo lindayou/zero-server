@@ -1,0 +1,41 @@
+syntax = "v1"
+
+info(
+	title: "type title here"
+	desc: "type desc here"
+	author: "type author here"
+	email: "type email here"
+	version: "type version here"
+)
+
+
+type (
+getDicListReq{
+
+}
+getDicListResp{
+DicList []*Dictionary `json:"dicList"`
+
+}
+Dictionary{
+Id int `json:"id"`
+CreatedAt int `json:"createdAt"`
+UpdatedAt int `json:"updatedAt"`
+DeletedAt int `json:"deletedAt"`
+Name string `json:"name"`
+Type string `json:"type"`
+Status int64 `json:"status"`
+Desc string `json:"desc"`
+
+}
+
+)
+
+@server(
+//	jwt: Auth
+	group: dictionary
+)
+service zero {
+	@handler getDicList
+	get /dic/getDicList (getDicListReq) returns (getDicListResp)
+}
