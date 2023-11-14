@@ -178,6 +178,13 @@
             </set>
           </value>
         </entry>
+        <entry key="Dictionary">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="EditLogic">
           <value>
             <set>
@@ -242,6 +249,34 @@
           </value>
         </entry>
         <entry key="GetAuthorityListResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDicDetailsLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/dictionary/get_dic_details_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDicListLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/logic/dictionary/get_dic_list_logic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDicListReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="GetDicListResp">
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/server/internal/types/types.go" />
@@ -458,6 +493,13 @@
             </set>
           </value>
         </entry>
+        <entry key="SysDictionaries">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/admin_dic/sysdictionariesmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="SysUser">
           <value>
             <set>
@@ -564,6 +606,13 @@
             </set>
           </value>
         </entry>
+        <entry key="customSysDictionariesModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/admin_dic/sysdictionariesmodel.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="customSysUserAuthorityModel">
           <value>
             <set>
@@ -596,6 +645,13 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/server/model/menu/sysbasemenusmodel_gen.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="defaultSysDictionariesModel">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/server/model/admin_dic/sysdictionariesmodel_gen.go" />
             </set>
           </value>
         </entry>
@@ -664,6 +720,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/handler/dictionary/get_dic_list_handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699880021547" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/server/internal/handler/menu/add_base_menu_handler.go">
           <value>
             <ScannedPath>
@@ -716,7 +779,7 @@
         <entry key="file://$PROJECT_DIR$/server/internal/handler/routes.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1699366887002" />
+              <option name="lastModified" value="1699880021547" />
             </ScannedPath>
           </value>
         </entry>
@@ -831,6 +894,30 @@
               <option name="schema">
                 <list>
                   <option value="UpdateAuthorityLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/dictionary/get_dic_details_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699967576778" />
+              <option name="schema">
+                <list>
+                  <option value="GetDicDetailsLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/internal/logic/dictionary/get_dic_list_logic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699969896009" />
+              <option name="schema">
+                <list>
+                  <option value="GetDicListLogic" />
                 </list>
               </option>
             </ScannedPath>
@@ -971,7 +1058,7 @@
         <entry key="file://$PROJECT_DIR$/server/internal/logic/user/login_logic.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1699366887012" />
+              <option name="lastModified" value="1699444439668" />
               <option name="schema">
                 <list>
                   <option value="LoginLogic" />
@@ -1031,7 +1118,7 @@
         <entry key="file://$PROJECT_DIR$/server/internal/svc/service_context.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1699366887013" />
+              <option name="lastModified" value="1699880021550" />
               <option name="schema">
                 <list>
                   <option value="ServiceContext" />
@@ -1043,7 +1130,7 @@
         <entry key="file://$PROJECT_DIR$/server/internal/types/types.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1699366887014" />
+              <option name="lastModified" value="1699880021550" />
               <option name="schema">
                 <list>
                   <option value="LoginRequset" />
@@ -1092,8 +1179,43 @@
                   <option value="SetDataAuthorityResp" />
                   <option value="TestReq" />
                   <option value="TestResp" />
+                  <option value="GetDicListReq" />
+                  <option value="GetDicListResp" />
+                  <option value="Dictionary" />
                 </list>
               </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/admin_dic/sysdictionariesmodel.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699971926042" />
+              <option name="schema">
+                <list>
+                  <option value="customSysDictionariesModel" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/admin_dic/sysdictionariesmodel_gen.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699880021551" />
+              <option name="schema">
+                <list>
+                  <option value="defaultSysDictionariesModel" />
+                  <option value="SysDictionaries" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/server/model/admin_dic/vars.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1699880021552" />
             </ScannedPath>
           </value>
         </entry>
@@ -1320,11 +1442,13 @@
         <entry key="custom_sys_authorities_model" value="customSysAuthoritiesModel" />
         <entry key="custom_sys_authority_menus_model" value="customSysAuthorityMenusModel" />
         <entry key="custom_sys_base_menus_model" value="customSysBaseMenusModel" />
+        <entry key="custom_sys_dictionaries_model" value="customSysDictionariesModel" />
         <entry key="custom_sys_user_authority_model" value="customSysUserAuthorityModel" />
         <entry key="custom_sys_user_model" value="customSysUserModel" />
         <entry key="default_sys_authorities_model" value="defaultSysAuthoritiesModel" />
         <entry key="default_sys_authority_menus_model" value="defaultSysAuthorityMenusModel" />
         <entry key="default_sys_base_menus_model" value="defaultSysBaseMenusModel" />
+        <entry key="default_sys_dictionaries_model" value="defaultSysDictionariesModel" />
         <entry key="default_sys_user_authority_model" value="defaultSysUserAuthorityModel" />
         <entry key="default_sys_user_model" value="defaultSysUserModel" />
         <entry key="delete_authority_logic" value="DeleteAuthorityLogic" />
@@ -1336,6 +1460,7 @@
         <entry key="delete_user_logic" value="DeleteUserLogic" />
         <entry key="delete_user_req" value="DeleteUserReq" />
         <entry key="delete_user_resp" value="DeleteUserResp" />
+        <entry key="dictionary" value="Dictionary" />
         <entry key="edit_logic" value="EditLogic" />
         <entry key="edit_menu_logic" value="EditMenuLogic" />
         <entry key="edit_menu_req" value="EditMenuReq" />
@@ -1346,6 +1471,10 @@
         <entry key="get_authority_list_logic" value="GetAuthorityListLogic" />
         <entry key="get_authority_list_req" value="GetAuthorityListReq" />
         <entry key="get_authority_list_resp" value="GetAuthorityListResp" />
+        <entry key="get_dic_details_logic" value="GetDicDetailsLogic" />
+        <entry key="get_dic_list_logic" value="GetDicListLogic" />
+        <entry key="get_dic_list_req" value="GetDicListReq" />
+        <entry key="get_dic_list_resp" value="GetDicListResp" />
         <entry key="get_menu_authority_logic" value="GetMenuAuthorityLogic" />
         <entry key="get_menu_authority_req" value="GetMenuAuthorityReq" />
         <entry key="get_menu_authority_resp" value="GetMenuAuthorityResp" />
@@ -1376,6 +1505,7 @@
         <entry key="sys_authorities" value="SysAuthorities" />
         <entry key="sys_authority_menus" value="SysAuthorityMenus" />
         <entry key="sys_base_menus" value="SysBaseMenus" />
+        <entry key="sys_dictionaries" value="SysDictionaries" />
         <entry key="sys_user" value="SysUser" />
         <entry key="sys_user_authority" value="SysUserAuthority" />
         <entry key="sys_users" value="SysUsers" />
@@ -1390,6 +1520,6 @@
         <entry key="user_message" value="UserMessage" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1699366900179" />
+    <option name="lastTimeChecked" value="1699879971816" />
   </component>
 </project>

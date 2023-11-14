@@ -260,6 +260,10 @@ type TestResp struct {
 }
 
 type GetDicListReq struct {
+	Name   string `form:"name,optional"`
+	Type   string `form:"type,optional"`
+	Status int64  `form:"status,optional"`
+	Desc   string `form:"desc,optional"`
 }
 
 type GetDicListResp struct {
@@ -278,7 +282,7 @@ type Dictionary struct {
 }
 
 type GetDicDetailsReq struct {
-	Id int64 `path:"id"`
+	Id int64 `form:"id"`
 }
 
 type GetDicDetailsResp struct {

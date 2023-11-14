@@ -149,7 +149,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			},
 			{
 				Method:  http.MethodGet,
-				Path:    "/dic/getDicDetials/:id",
+				Path:    "/dic/getDicDetials",
 				Handler: dictionary.GetDicDetailsHandler(serverCtx),
 			},
 			{
