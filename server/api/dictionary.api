@@ -28,7 +28,95 @@ Status int64 `json:"status"`
 Desc string `json:"desc"`
 
 }
+//获取字典详情
+getDicDetailsReq{
+	Id int64 `path:"id"`
 
+}
+getDicDetailsResp{
+DetailsList  []*DicDetail `json:"detailsList"`
+
+}
+DicDetail{
+Id int64 `json:"id"`
+SysDictionatyId int64 `json:"sysDictionatyId"`
+Date int `json:"date"`
+Lable string `json:"lable"`
+Value int64 `json:"value"`
+Status int64 `json:"status"`
+Sort int64 `json:"sort"`
+}
+//增加字典
+addDicReq{
+	Name string `json:"name"`
+	Type string `json:"type"`
+	Status int64 `json:"status"`
+	Desc string `json:"desc"`
+
+}
+addDicResp{
+Msg string `json:"msg"`
+Id int64 `json:"id"`
+
+}
+//编辑字典
+editDicReq{
+	Id int `json:"id"`
+	Name string `json:"name"`
+	Type string `json:"type"`
+	Status int64 `json:"status"`
+	Desc string `json:"desc"`
+}
+editDicResp{
+Msg string `json:"msg"`
+
+}
+//删除字典
+deleteDicReq{
+Id int64 `json:"id"`
+
+}
+deleteDicResp{
+Msg string `json:"msg"`
+
+}
+//增加字典详情
+addDicDetailsReq{
+	SysDictionatyId int64 `json:"sysDictionatyId"`
+	Lable string `json:"lable"`
+	Value int64 `json:"value"`
+	Status int64 `json:"status"`
+	Sort int64 `json:"sort"`
+
+}
+addDicDetailsResp{
+Msg string `json:"msg"`
+Id int64 `json:"id"`
+
+}
+//编辑字典详情
+editDicDetailsReq{
+	Id int64 `json:"id"`
+	Lable string `json:"lable"`
+	Value int64 `json:"value"`
+	Status int64 `json:"status"`
+	Sort int64 `json:"sort"`
+	SysDictionatyId int64 `json:"sysDictionatyId"`
+
+
+}
+editDicDetailsResp{
+Msg string `json:"msg"`
+
+}
+//删除字典详情
+deleteDicDetailsReq{
+Id int64 `json:"id"`
+
+}
+deleteDicDetailsResp{
+	Msg string `json:"msg"`
+}
 )
 
 @server(
@@ -36,6 +124,28 @@ Desc string `json:"desc"`
 	group: dictionary
 )
 service zero {
+//获取字典列表
 	@handler getDicList
 	get /dic/getDicList (getDicListReq) returns (getDicListResp)
+//获取字典详情
+   @handler getDicDetails
+   get /dic/getDicDetials/:id (getDicDetailsReq)returns(getDicDetailsResp)
+//增加字典
+   @handler addDic
+   post /dic/addDic (addDicReq)returns(addDicResp)
+	//编辑字典
+	@handler editDic
+	post /dic/editDic (editDicReq)returns(editDicResp)
+//删除字典
+	@handler deleteDic
+	post /dic/deleteDic (deleteDicReq)returns(deleteDicResp)
+//增加详情
+    @handler addDicDetails
+	post /dic/addDicDetails (addDicDetailsReq)returns(addDicDetailsResp)
+//编辑详情
+	@handler editDicDetails
+	post /dic/editDicDetails (editDicDetailsReq)returns(editDicDetailsResp)
+//删除详情
+		@handler deleteDicDetails
+	post /dic/deleteDicDetails (deleteDicDetailsReq)returns(deleteDicDetailsResp)
 }

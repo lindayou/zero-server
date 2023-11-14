@@ -147,6 +147,41 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/dic/getDicList",
 				Handler: dictionary.GetDicListHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/dic/getDicDetials/:id",
+				Handler: dictionary.GetDicDetailsHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/dic/addDic",
+				Handler: dictionary.AddDicHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/dic/editDic",
+				Handler: dictionary.EditDicHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/dic/deleteDic",
+				Handler: dictionary.DeleteDicHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/dic/addDicDetails",
+				Handler: dictionary.AddDicDetailsHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/dic/editDicDetails",
+				Handler: dictionary.EditDicDetailsHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/dic/deleteDicDetails",
+				Handler: dictionary.DeleteDicDetailsHandler(serverCtx),
+			},
 		},
 	)
 }

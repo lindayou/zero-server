@@ -276,3 +276,87 @@ type Dictionary struct {
 	Status    int64  `json:"status"`
 	Desc      string `json:"desc"`
 }
+
+type GetDicDetailsReq struct {
+	Id int64 `path:"id"`
+}
+
+type GetDicDetailsResp struct {
+	DetailsList []*DicDetail `json:"detailsList"`
+}
+
+type DicDetail struct {
+	Id              int64  `json:"id"`
+	SysDictionatyId int64  `json:"sysDictionatyId"`
+	Date            int    `json:"date"`
+	Lable           string `json:"lable"`
+	Value           int64  `json:"value"`
+	Status          int64  `json:"status"`
+	Sort            int64  `json:"sort"`
+}
+
+type AddDicReq struct {
+	Name   string `json:"name"`
+	Type   string `json:"type"`
+	Status int64  `json:"status"`
+	Desc   string `json:"desc"`
+}
+
+type AddDicResp struct {
+	Msg string `json:"msg"`
+	Id  int64  `json:"id"`
+}
+
+type EditDicReq struct {
+	Id     int    `json:"id"`
+	Name   string `json:"name"`
+	Type   string `json:"type"`
+	Status int64  `json:"status"`
+	Desc   string `json:"desc"`
+}
+
+type EditDicResp struct {
+	Msg string `json:"msg"`
+}
+
+type DeleteDicReq struct {
+	Id int64 `json:"id"`
+}
+
+type DeleteDicResp struct {
+	Msg string `json:"msg"`
+}
+
+type AddDicDetailsReq struct {
+	SysDictionatyId int64  `json:"sysDictionatyId"`
+	Lable           string `json:"lable"`
+	Value           int64  `json:"value"`
+	Status          int64  `json:"status"`
+	Sort            int64  `json:"sort"`
+}
+
+type AddDicDetailsResp struct {
+	Msg string `json:"msg"`
+	Id  int64  `json:"id"`
+}
+
+type EditDicDetailsReq struct {
+	Id              int64  `json:"id"`
+	Lable           string `json:"lable"`
+	Value           int64  `json:"value"`
+	Status          int64  `json:"status"`
+	Sort            int64  `json:"sort"`
+	SysDictionatyId int64  `json:"sysDictionatyId"`
+}
+
+type EditDicDetailsResp struct {
+	Msg string `json:"msg"`
+}
+
+type DeleteDicDetailsReq struct {
+	Id int64 `json:"id"`
+}
+
+type DeleteDicDetailsResp struct {
+	Msg string `json:"msg"`
+}

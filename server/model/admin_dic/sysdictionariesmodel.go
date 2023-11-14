@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
+	"zero-server/server/model/admin_dic_detail"
 )
 
 var _ SysDictionariesModel = (*customSysDictionariesModel)(nil)
@@ -14,6 +15,7 @@ type (
 	SysDictionariesModel interface {
 		sysDictionariesModel
 		GetDicList(ctx context.Context) ([]*SysDictionaries, error)
+		GetDicDetails(ctx context.Context, id int64) ([]*admin_dic_detail.SysDictionaryDetails, error)
 	}
 
 	customSysDictionariesModel struct {
@@ -36,4 +38,14 @@ func (m *defaultSysDictionariesModel) GetDicList(ctx context.Context) ([]*SysDic
 		return nil, err
 	}
 	return DicArr, nil
+}
+
+func (m *defaultSysDictionariesModel) GetDicDetails(ctx context.Context, id int64) ([]*admin_dic_detail.SysDictionaryDetails, error) {
+	var DicDetailsArr = []*admin_dic_detail.SysDictionaryDetails{}
+	query := fmt.Sprintf("select * from sys_dictionary_details where sys_dictionary_id =?")
+	err := m.conn.QueryRowsCtx(ctx, &DicDetailsArr, query, id)
+	if err != nil {
+		return nil, err
+	}
+	return DicDetailsArr, nil
 }
