@@ -259,15 +259,23 @@ type TestResp struct {
 	Message string `json:"message"`
 }
 
+type PageInfo struct {
+	Page     int `form:"page"`
+	PageSize int `form:"pageSize"`
+}
+
 type GetDicListReq struct {
-	Name   string `form:"name,optional"`
-	Type   string `form:"type,optional"`
-	Status int64  `form:"status,optional"`
-	Desc   string `form:"desc,optional"`
+	Name     string `form:"name,optional"`
+	Type     string `form:"type,optional"`
+	Status   int64  `form:"status,optional"`
+	Desc     string `form:"desc,optional"`
+	Page     int    `form:"page,optional"`
+	PageSize int    `form:"pageSize,optional"`
 }
 
 type GetDicListResp struct {
 	DicList []*Dictionary `json:"dicList"`
+	Total   int64         `json:"total"`
 }
 
 type Dictionary struct {

@@ -15,7 +15,7 @@ type (
 	// and implement the added methods in customSysDictionariesModel.
 	SysDictionariesModel interface {
 		sysDictionariesModel
-		GetDicList(ctx context.Context, req *types.GetDicListReq) ([]*SysDictionaries, error)
+		GetDicList(ctx context.Context, req *types.GetDicListReq) ([]*SysDictionaries, int, error)
 		GetDicDetails(ctx context.Context, id int64) ([]*admin_dic_detail.SysDictionaryDetails, error)
 	}
 
@@ -31,52 +31,68 @@ func NewSysDictionariesModel(conn sqlx.SqlConn) SysDictionariesModel {
 	}
 }
 
-func (m *defaultSysDictionariesModel) GetDicList(ctx context.Context, req *types.GetDicListReq) ([]*SysDictionaries, error) {
+func (m *defaultSysDictionariesModel) GetDicList(ctx context.Context, req *types.GetDicListReq) ([]*SysDictionaries, int, error) {
 	var DicArr []*SysDictionaries
+	total := 0
+	if req.Page < 1 {
+		req.Page = 1
+	}
+	limit := req.PageSize
+	offset := req.PageSize * (req.Page - 1)
 	if req.Name != "" {
-		query := fmt.Sprintf("select * from %s where name =?", m.table)
-		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, req.Name)
+		query := fmt.Sprintf("select * from %s where name like ?", m.table)
+		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, "%"+req.Name+"%")
+		total = len(DicArr)
 		if err != nil {
-			return nil, err
+			return nil, 0, err
 		}
-		return DicArr, nil
+		return DicArr, total, nil
 
 	}
 	if req.Type != "" {
-		query := fmt.Sprintf("select * from %s where type =?", m.table)
-		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, req.Type)
+		query := fmt.Sprintf("select * from %s where type like ?", m.table)
+		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, "%"+req.Type+"%")
+		total = len(DicArr)
 		if err != nil {
-			return nil, err
+			return nil, 0, err
 		}
-		return DicArr, nil
+		return DicArr, total, nil
 
 	}
 
 	if req.Status != 0 {
 		query := fmt.Sprintf("select * from %s where status =?", m.table)
 		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, req.Status)
+		total = len(DicArr)
 		if err != nil {
-			return nil, err
+			return nil, 0, err
 		}
-		return DicArr, nil
+		return DicArr, total, nil
 
 	}
 
 	if req.Desc != "" {
-		query := fmt.Sprintf("select * from %s where desc =?", m.table)
-		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, req.Desc)
+		query := fmt.Sprintf("select * from %s where desc like ?", m.table)
+		err := m.conn.QueryRowsCtx(ctx, &DicArr, query, "%"+req.Desc+"%")
+		total = len(DicArr)
 		if err != nil {
-			return nil, err
+			return nil, 0, err
 		}
-		return DicArr, nil
+		return DicArr, total, nil
 
 	}
-	query := fmt.Sprintf("select * from %s", m.table)
-	err := m.conn.QueryRowsCtx(ctx, &DicArr, query)
+
+	queryCount := fmt.Sprintf("select COUNT(1) FROM %s ", m.table)
+	err := m.conn.QueryRow(&total, queryCount)
 	if err != nil {
-		return nil, err
+		return nil, 0, err
 	}
-	return DicArr, nil
+	query := fmt.Sprintf("select * from %s limit ?,?", m.table)
+	err = m.conn.QueryRowsCtx(ctx, &DicArr, query, offset, limit)
+	if err != nil {
+		return nil, 0, err
+	}
+	return DicArr, total, nil
 }
 
 func (m *defaultSysDictionariesModel) GetDicDetails(ctx context.Context, id int64) ([]*admin_dic_detail.SysDictionaryDetails, error) {
