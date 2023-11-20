@@ -3,6 +3,7 @@ import "menu.api"
 import "authority.api"
 import "test.api"
 import "dictionary.api"
+import "operation.api"
 info(
 	title: "type title here"
 	desc: "type desc here"
@@ -129,12 +130,19 @@ type (
 	}
 )
 @server(
-	//	jwt: Auth
+	group: user
+)
+service zero{
+	@handler login
+	post /user/login (LoginRequset) returns (LoginResponse)
+
+}
+
+@server(
+	jwt: Auth
 	group: user
 )
 service zero {
-	@handler login
-	post /user/login (LoginRequset) returns (LoginResponse)
 
 	@handler register
 	post /user/register(RegisterReq)returns(RegisterResp)

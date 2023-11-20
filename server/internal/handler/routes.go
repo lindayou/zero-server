@@ -7,6 +7,7 @@ import (
 	authority "zero-server/server/internal/handler/authority"
 	dictionary "zero-server/server/internal/handler/dictionary"
 	menu "zero-server/server/internal/handler/menu"
+	operation "zero-server/server/internal/handler/operation"
 	test "zero-server/server/internal/handler/test"
 	user "zero-server/server/internal/handler/user"
 	"zero-server/server/internal/svc"
@@ -22,6 +23,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/user/login",
 				Handler: user.LoginHandler(serverCtx),
 			},
+		},
+	)
+
+	server.AddRoutes(
+		[]rest.Route{
 			{
 				Method:  http.MethodPost,
 				Path:    "/user/register",
@@ -58,6 +64,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Handler: user.DeleteUserHandler(serverCtx),
 			},
 		},
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 	)
 
 	server.AddRoutes(
@@ -181,6 +188,16 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodPost,
 				Path:    "/dic/deleteDicDetails",
 				Handler: dictionary.DeleteDicDetailsHandler(serverCtx),
+			},
+		},
+	)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodGet,
+				Path:    "/operation/getOperationList",
+				Handler: operation.GetOperationListHandler(serverCtx),
 			},
 		},
 	)

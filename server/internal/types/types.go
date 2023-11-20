@@ -372,3 +372,28 @@ type DeleteDicDetailsReq struct {
 type DeleteDicDetailsResp struct {
 	Msg string `json:"msg"`
 }
+
+type Operation struct {
+	Id           int64  `json:"id"`
+	CreatedAt    int64  `json:"createdAt"`
+	UpdatedAt    int64  `json:"updatedAt"`
+	Ip           string `json:"ip"`
+	Method       string `json:"method"`
+	Path         string `json:"path"`
+	Status       int64  `json:"status"`
+	Latency      int64  `json:"latency"`
+	Agent        string `json:"agent"`
+	ErrorMessage string `json:"errorMessage"`
+	Body         string `json:"body"`
+	Resp         string `json:"resp"`
+	UserId       int64  `json:"userId"`
+}
+
+type GetOperationListReq struct {
+	Page     int `form:"page,optional"`
+	PageSize int `form:"pageSize,optional"`
+}
+
+type GetOperationListResp struct {
+	OperationList []*Operation `json:"operationList"`
+}

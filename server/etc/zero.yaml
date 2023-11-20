@@ -11,5 +11,5 @@ Redis:
   Password:
 
 Auth:
-  AccessSecret: jwt-key
+  AccessSecret: jwt-key12121
   AccessExpire: 3600
