@@ -397,3 +397,23 @@ type GetOperationListReq struct {
 type GetOperationListResp struct {
 	OperationList []*Operation `json:"operationList"`
 }
+
+type CreateOperationReq struct {
+	Id           int64  `json:"id"`
+	CreatedAt    int64  `json:"createdAt"`
+	UpdatedAt    int64  `json:"updatedAt"`
+	Ip           string `json:"ip,optional"`
+	Method       string `json:"method,optional"`
+	Path         string `json:"path,optional"`
+	Status       int64  `json:"status,optional"`
+	Latency      int64  `json:"latency,optional"`
+	Agent        string `json:"agent,optional"`
+	ErrorMessage string `json:"errorMessage,optional"`
+	Body         string `json:"body,optional"`
+	Resp         string `json:"resp,optional"`
+	UserId       int64  `json:"userId,optional"`
+}
+
+type CreateOperationResp struct {
+	Msg string `json:"msg"`
+}

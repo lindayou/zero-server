@@ -24,7 +24,31 @@ func NewGetOperationListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 }
 
 func (l *GetOperationListLogic) GetOperationList(req *types.GetOperationListReq) (resp *types.GetOperationListResp, err error) {
-	// todo: add your logic here and delete this line
+	resp = new(types.GetOperationListResp)
+	list, err := l.svcCtx.Operation.GetOperationList(l.ctx)
+	if err != nil {
+		return nil, err
+	}
+	operations := make([]*types.Operation, 0)
+	for _, item := range list {
+		operations = append(operations, &types.Operation{
+			Id:           item.Id,
+			CreatedAt:    item.CreatedAt.Unix(),
+			UpdatedAt:    item.UpdatedAt.Unix(),
+			Ip:           item.Ip,
+			Method:       item.Method,
+			Path:         item.Path,
+			Status:       item.Status,
+			Latency:      item.Latency,
+			Agent:        item.Agent,
+			ErrorMessage: item.ErrorMessage,
+			Body:         item.Body,
+			Resp:         item.Resp,
+			UserId:       item.UserId,
+		})
 
-	return
+	}
+	resp.OperationList = operations
+
+	return resp, nil
 }

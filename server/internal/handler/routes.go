@@ -27,43 +27,46 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	)
 
 	server.AddRoutes(
-		[]rest.Route{
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/register",
-				Handler: user.RegisterHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/edit",
-				Handler: user.EditHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/changePass",
-				Handler: user.ChangePassHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/sendIdentityMes",
-				Handler: user.SendIdentityMesHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/getUserList",
-				Handler: user.GetUserListHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/setUserAuthority",
-				Handler: user.SetUserAuthorityHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/deleteUser",
-				Handler: user.DeleteUserHandler(serverCtx),
-			},
-		},
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.OperationRecord},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/register",
+					Handler: user.RegisterHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/edit",
+					Handler: user.EditHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/changePass",
+					Handler: user.ChangePassHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/sendIdentityMes",
+					Handler: user.SendIdentityMesHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/getUserList",
+					Handler: user.GetUserListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/setUserAuthority",
+					Handler: user.SetUserAuthorityHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/deleteUser",
+					Handler: user.DeleteUserHandler(serverCtx),
+				},
+			}...,
+		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 	)
 
@@ -198,6 +201,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Method:  http.MethodGet,
 				Path:    "/operation/getOperationList",
 				Handler: operation.GetOperationListHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/operation/createOperation",
+				Handler: operation.CreateOperationHandler(serverCtx),
 			},
 		},
 	)

@@ -23,7 +23,7 @@ Body string `json:"body"`
 Resp string `json:"resp"`
 UserId int64 `json:"userId"`
 }
-
+//获取操作记录
 getOperationListReq{
 
 	Page int `form:"page,optional"`
@@ -35,6 +35,28 @@ getOperationListResp{
 OperationList []*Operation `json:"operationList"`
 
 }
+//创建操作记录
+createOperationReq{
+	Id int64 `json:"id"`
+	CreatedAt int64 `json:"createdAt"`
+	UpdatedAt int64 `json:"updatedAt"`
+	Ip string `json:"ip,optional"`
+	Method string `json:"method,optional"`
+	Path string `json:"path,optional"`
+	Status int64 `json:"status,optional"`
+	Latency int64 `json:"latency,optional"`
+	Agent string `json:"agent,optional"`
+	ErrorMessage string `json:"errorMessage,optional"`
+	Body string `json:"body,optional"`
+	Resp string `json:"resp,optional"`
+	UserId int64 `json:"userId,optional"`
+
+}
+createOperationResp{
+Msg string `json:"msg"`
+
+}
+
 
 )
 
@@ -45,4 +67,7 @@ OperationList []*Operation `json:"operationList"`
 service zero{
 	@handler getOperationList
 	get /operation/getOperationList (getOperationListReq) returns (getOperationListResp)
+
+    @handler createOperation
+    post /operation/createOperation (createOperationReq)  returns (createOperationResp)
 }

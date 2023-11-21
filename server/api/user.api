@@ -140,6 +140,7 @@ service zero{
 
 @server(
 	jwt: Auth
+	middleware : OperationRecord
 	group: user
 )
 service zero {
