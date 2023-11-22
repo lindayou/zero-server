@@ -25,7 +25,12 @@ func NewGetOperationListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 
 func (l *GetOperationListLogic) GetOperationList(req *types.GetOperationListReq) (resp *types.GetOperationListResp, err error) {
 	resp = new(types.GetOperationListResp)
-	list, err := l.svcCtx.Operation.GetOperationList(l.ctx)
+	if req.Page < 1 {
+		req.Page = 1
+	}
+	offset := (req.Page - 1) * req.PageSize
+
+	list, total, err := l.svcCtx.Operation.GetOperationList(l.ctx, req.PageSize, offset)
 	if err != nil {
 		return nil, err
 	}
@@ -49,6 +54,7 @@ func (l *GetOperationListLogic) GetOperationList(req *types.GetOperationListReq)
 
 	}
 	resp.OperationList = operations
+	resp.Total = total
 
 	return resp, nil
 }

@@ -395,6 +395,7 @@ type GetOperationListReq struct {
 }
 
 type GetOperationListResp struct {
+	Total         int          `json:"total"`
 	OperationList []*Operation `json:"operationList"`
 }
 

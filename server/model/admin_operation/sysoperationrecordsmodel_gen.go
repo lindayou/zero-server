@@ -37,8 +37,8 @@ type (
 
 	SysOperationRecords struct {
 		Id           int64        `db:"id"`
-		CreatedAt    time.Time    `db:"created_at"`
-		UpdatedAt    time.Time    `db:"updated_at"`
+		CreatedAt    time.Time    `db:"created_at" format:"2006-01-02 15:04:05" json:"createdAt"`
+		UpdatedAt    time.Time    `db:"updated_at" format:"2006-01-02 15:04:05" json:"updatedAt"`
 		DeletedAt    sql.NullTime `db:"deleted_at"`
 		Ip           string       `db:"ip"`            // 请求ip
 		Method       string       `db:"method"`        // 请求方法
