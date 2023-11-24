@@ -107,6 +107,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/menu/addMenuAuthority",
 				Handler: menu.AddMenuAuthorityHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/menu/getUserMenus",
+				Handler: menu.GetUserMenusHandler(serverCtx),
+			},
 		},
 	)
 

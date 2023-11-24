@@ -84,7 +84,7 @@ func (m *OperationRecordMiddleware) Handle(next http.HandlerFunc) http.HandlerFu
 
 		w.Write([]byte(recorder.Body.String()))
 
-		conn := sqlx.NewMysql("root:qwe123-=@tcp(127.0.0.1:3306)/go-zero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai")
+		conn := sqlx.NewMysql("root:qwe123-=@tcp(127.0.0.1:3306)/go-zero1?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai")
 		operation := admin_operation.NewSysOperationRecordsModel(conn)
 		_, err := operation.Insert(context.Background(), operate)
 		if err != nil {

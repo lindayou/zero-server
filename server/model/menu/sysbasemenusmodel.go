@@ -22,6 +22,7 @@ type (
 		UpdateMenu(ctx context.Context, data *SysBaseMenus) error
 		GetAuthorityMenu(ctx context.Context, AuthorityId int64) ([]*SysBaseMenus, error)
 		AddMenuAuthority(ctx context.Context, menuIds []int, AuthorityId int64) error
+		GetUserMenus(ctx context.Context, UserId int) ([]*SysBaseMenus, error)
 	}
 
 	customSysBaseMenusModel struct {
@@ -94,5 +95,16 @@ func (m *defaultSysBaseMenusModel) AddMenuAuthority(ctx context.Context, menuIds
 	}
 
 	return nil
+
+}
+
+func (m *defaultSysBaseMenusModel) GetUserMenus(ctx context.Context, UserId int) ([]*SysBaseMenus, error) {
+	var menus = []*SysBaseMenus{}
+	query := fmt.Sprintf("SELECT * from sys_base_menus WHERE id in (SELECT  DISTINCT(sys_base_menu_id ) from sys_authority_menus WHERE  sys_authority_authority_id in (  SELECT sys_authority_authority_id from sys_user_authority WHERE sys_user_id =?))")
+	err := m.conn.QueryRowsCtx(ctx, &menus, query, UserId)
+	if err != nil {
+		return nil, err
+	}
+	return menus, nil
 
 }

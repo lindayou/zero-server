@@ -198,6 +198,14 @@ type AddMenuAuthorityResp struct {
 	Message string `json:"message"`
 }
 
+type GetUserMenusReq struct {
+	UserId int `form:"userId"`
+}
+
+type GetUserMenusResp struct {
+	MenuList []*Menu `json:"menuList"`
+}
+
 type CreateAuthorityReq struct {
 	AuthorityId   int64  `json:"authorityId"`
 	AuthorityName string `json:"authorityName"`

@@ -83,6 +83,7 @@ type (
 	//获取指定角色的Menu
 	getMenuAuthorityReq {
 		AuthorityId int64 `json:"authorityId"`
+
 	}
 	getMenuAuthorityResp {
 		MenuList []*Menu `json:"menuList"`
@@ -94,6 +95,15 @@ type (
 	}
 	AddMenuAuthorityResp{
 	Message string `json:"message"`
+	}
+//获取指定用户的菜单
+	getUserMenusReq{
+	UserId int `form:"userId"`
+
+	}
+	getUserMenusResp{
+		MenuList []*Menu `json:"menuList"`
+
 	}
 )
 
@@ -123,4 +133,7 @@ service zero {
     //增加角色和Menu的关联关系
     @handler addMenuAuthority
 	post /menu/addMenuAuthority (AddMenuAuthorityReq) returns (AddMenuAuthorityResp)
+
+    @handler getUserMenus
+    get /menu/getUserMenus(getUserMenusReq)returns (getUserMenusResp)
 }
